@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body id="body">
+	</body>
+</html>
+<script type="text/javascript" src="js/ajax-3.0.js"></script>
+<script type="text/javascript">
+	ajax({
+		method:"GET",
+		url: "http://csit.top/api_goods.php",
+		json: {
+		cat_id: 45,
+		page: 1,
+		pagesize: 6
+	},
+	cb: function(a) {
+ 		var oBody=document.getElementById("body") 
+		var arr = a.data
+		
+//		var str = ""
+		for (var i = 0; i < arr.length; i++) {
+			var oDiv=document.createElement("div")
+			var oUl=document.createElement("ul")
+			var oLi=document.createElement("li")
+			oLi.innerHTML =  oLi.innerHTML='<img src="'+ arr[i].goods_thumb +'"/>'+
+					 '<a id="brand">'+ arr[i].goods_name +'</a>'+
+					 '<input type="button" value="+" onclick="addcart('+arr[i].goods_id+')"/>'+ 
+					 '<a class="fav"><span class="Fav">'+ arr[i].star_number +'</span><img class="heartlogo" src="img/heart_gray.png"/></a>'+
+					 '<div class="desc"><h2>￥' +arr[i].price +'</h2><h3>' +arr[i].goods_name +'</h3><p>'+ arr[i].goods_desc +'</p></div>';
+			oDiv.style.width="1000px"
+			oDiv.style.height="auto"
+			oDiv.style.border="5px solid red"
+			oUl.appendChild(oLi)
+//			oLi.innerHTML=str
+//			oDiv.style.float="left"
+		}
+		
+		oBody.appendChild(oDiv)
+		oDiv.appendChild(oUl)
+		
+	}
+	})
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{margin: 0px ;padding: 0px;}
+			.zd{
+				width: 10px;
+				height: 20px;
+				background: red;
+				position: absolute;
+				bottom: 0px;
+				left: 50%;margin-left: -5px;
+			}
+		</style>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js">
+	
+</script>
+<script type="text/javascript">
+	setInterval(function(){
+		var oBox=$("<div></div>")
+		oBox.addClass("zd")
+		$("body").append(oBox)
+		oBox.animate({"bottom":500},1000,function(){
+			oBox.remove()
+		})
+	},300)
+</script>

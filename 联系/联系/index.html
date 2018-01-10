@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("li:odd").css("background","red");
+				$("li:even").css("background","yellow");
+//				$("li:gt(5)").css("background","green");
+				$("li")[0].style.border="10px solid #000"
+				$("li")[2].onclick=function(){
+					alert("11111111")
+					
+				}
+				$("ul").find("li").css("width","500px");
+				$("ul").find("li").css("height","200px");
+				$("ul").children().css("margin-top","20px");
+				$("ul").children("li").css("padding","50px");
+				$("ul").children("ol").children("li").css("background","#000");
+			})
+		</script>
+	</head>
+	<body>
+		<ul>
+		    <li>班长今天老帅了，嗷嗷帅...</li>
+		    <li class="c1">班长今天老帅了，嗷嗷帅...</li>
+		    <li>班长今天老帅了，嗷嗷帅...</li>
+		    <li>班长今天老帅了，嗷嗷帅...</li>
+		    <li>班长今天老帅了，嗷嗷帅...</li>
+		    <li>班长今天老帅了，嗷嗷帅...</li>
+		    <li>
+		    	<ol>
+			    	<li>sssss</li>
+			    	<li>sssss</li>
+			    	<li>sssss</li>
+			    	<li>sssss</li>
+		    	</ol>
+		    </li>
+		</ul>
+
+	</body>
+</html>
+<!--<script src="js/jquery-1.11.1.min.js"></script>
+
+<script>
+//
+//
+//$(
+//	function(){
+//		console.log("9999999999999")
+//	}
+//)
+//
+//$(
+//	function(){
+//		alert("2")
+//	}
+//)
+///*
+//$(function() {
+//	// $("#box") 代表找到 id为 box 的元素
+//	//   .click  单击事件, 是来自于 【jQuery 对象】中的方法
+//	$("#box").click(function() {
+//		// alert()
+//		// 正确的js代码
+//	})
+//
+//	
+////	// oBox 是1个DOM对象
+////	var oBox = document.getElementById("box")
+////	
+////	// onclick 是 【DOM对象】的
+////	oBox.onclick = function() {
+////		alert()
+////	}
+//
+//})
+//
+//*/
+//
+//
+//// $函数调用, 参数是 函数
+//$(function() {
+//	
+//	// $("#box") jQuery的对象
+//	// $("#box")[0] 将 jQuery对象 转换成 js对象
+//	// $("div").get(2) 将 jQuery对象 转换成 js对象
+//	// $("div")[2].onclick = function() {
+////	$("div").get(2).onclick = function() {
+////		alert();
+////	}
+//
+//
+//	var oBox = document.getElementById("box")
+//	
+//	// oBox 是1个js的DOM对象
+//	// $(oBox) 是将 jsDOM对象转换成了 jQuery 对象
+//	
+//	// $函数调用, 参数是 js对象
+//	$(oBox).click(function() {
+//		alert()
+//	})
+//	
+//})
+$(function(){
+	$("li:odd").CSS("background","red")
+})
+</script>-->

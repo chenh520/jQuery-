@@ -74,51 +74,73 @@
 	
 </script>
 <script type="text/javascript">
-	
-	$("ul li").eq(0).mouseover(function(){
-		$(function(){
-			$("ul li:eq(1)").animate({"left":500},3000);
-			$("ul li:eq(2)").animate({"left":560},3000);
-			$("ul li:eq(3)").animate({"left":640},3000);
-			$("ul li:eq(4)").animate({"left":720},3000);
-		})
+//	
+//	$("ul li").eq(0).mouseover(function(){
+//		$(function(){
+//			$("ul li:eq(1)").animate({"left":500},3000);
+//			$("ul li:eq(2)").animate({"left":560},3000);
+//			$("ul li:eq(3)").animate({"left":640},3000);
+//			$("ul li:eq(4)").animate({"left":720},3000);
+//		})
+//	})
+//	$("ul li").eq(1).mouseover(function(){
+//		$(function(){
+//			$("ul li:eq(1)").animate({"left":80},3000);
+//			$("ul li:eq(2)").animate({"left":560},3000);
+//			$("ul li:eq(3)").animate({"left":640},3000);
+//			$("ul li:eq(4)").animate({"left":720},3000);
+//		})
+//	})
+//		$("ul li").eq(2).mouseover(function(){
+//		$(function(){
+//			$("ul li:eq(1)").animate({"left":80},3000);
+//			$("ul li:eq(2)").animate({"left":160},3000);
+//			$("ul li:eq(3)").animate({"left":640},3000);
+//			$("ul li:eq(4)").animate({"left":720},3000);
+//		})
+//	})
+//			$("ul li").eq(3).mouseover(function(){
+//		$(function(){
+//			$("ul li:eq(1)").animate({"left":80},3000);
+//			$("ul li:eq(2)").animate({"left":160},3000);
+//			$("ul li:eq(3)").animate({"left":240},3000);
+//			$("ul li:eq(4)").animate({"left":720},3000);
+//		})
+//	})
+//				$("ul li").eq(4).mouseover(function(){
+//		$(function(){
+//			$("ul li:eq(1)").animate({"left":80},3000);
+//			$("ul li:eq(2)").animate({"left":160},3000);
+//			$("ul li:eq(3)").animate({"left":240},3000);
+//			$("ul li:eq(4)").animate({"left":320},3000);
+//		})
+//	})
+//	$("ul li").mouseout(function(){
+//		$("ul li:eq(1)").animate({"left":160},3000);
+//		$("ul li:eq(2)").animate({"left":320},3000);
+//		$("ul li:eq(3)").animate({"left":480},3000);
+//		$("ul li:eq(4)").animate({"left":640},3000);
+//	})
+$(window).ready(function(){
+	$("li").mouseover(function(){
+		$("li").stop();
+		var index=$(this).index();
+		for(var i=0;i<=index;i++){
+			var l=i*60;
+			$("li").eq(i).animate({left:l},1000);
+		}
+		for(var i=index+1;i<=4;i++){
+			var l=i*60+500;
+			$("li").eq(i).animate({left:l},1000);
+		}
 	})
-	$("ul li").eq(1).mouseover(function(){
-		$(function(){
-			$("ul li:eq(1)").animate({"left":80},3000);
-			$("ul li:eq(2)").animate({"left":560},3000);
-			$("ul li:eq(3)").animate({"left":640},3000);
-			$("ul li:eq(4)").animate({"left":720},3000);
-		})
+	$("li").mouseleave(function(){
+		$("li").stop();
+		for(var i=0;i<=4;i++){
+			var l=i*160;
+			$("li").eq(i).animate({left:l},1000);
+		}
 	})
-		$("ul li").eq(2).mouseover(function(){
-		$(function(){
-			$("ul li:eq(1)").animate({"left":80},3000);
-			$("ul li:eq(2)").animate({"left":160},3000);
-			$("ul li:eq(3)").animate({"left":640},3000);
-			$("ul li:eq(4)").animate({"left":720},3000);
-		})
-	})
-			$("ul li").eq(3).mouseover(function(){
-		$(function(){
-			$("ul li:eq(1)").animate({"left":80},3000);
-			$("ul li:eq(2)").animate({"left":160},3000);
-			$("ul li:eq(3)").animate({"left":240},3000);
-			$("ul li:eq(4)").animate({"left":720},3000);
-		})
-	})
-				$("ul li").eq(4).mouseover(function(){
-		$(function(){
-			$("ul li:eq(1)").animate({"left":80},3000);
-			$("ul li:eq(2)").animate({"left":160},3000);
-			$("ul li:eq(3)").animate({"left":240},3000);
-			$("ul li:eq(4)").animate({"left":320},3000);
-		})
-	})
-	$("ul li").mouseout(function(){
-		$("ul li:eq(1)").animate({"left":160},3000);
-		$("ul li:eq(2)").animate({"left":320},3000);
-		$("ul li:eq(3)").animate({"left":480},3000);
-		$("ul li:eq(4)").animate({"left":640},3000);
-	})
+})
+
 </script>
